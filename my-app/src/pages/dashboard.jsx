@@ -1,13 +1,13 @@
 import React from 'react';
 
-function App() {
+function Dashboard() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>MJF Capstone Project</h1>
+        <h1>Your Dashboard</h1>
       </header>
     </div>
   );
 }
 
-export default App;
+export default Dashboard;

@@ -1,13 +1,13 @@
 import React from 'react';
 
-function App() {
+function Registration() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>MJF Capstone Project</h1>
+        <h1>Registration Page</h1>
       </header>
     </div>
   );
 }
 
-export default App;
+export default Registration;
