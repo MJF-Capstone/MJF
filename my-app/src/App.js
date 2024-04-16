@@ -4,7 +4,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>MJF Capstone Project</h1>
+        <h1>MJF Inventory Manager</h1>
       </header>
     </div>
   );
