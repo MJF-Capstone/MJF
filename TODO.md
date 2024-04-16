@@ -15,12 +15,12 @@ install bcrypt
 
 install env
     "npm install dotenv"
-    
+
 #
 env file
 bcrypt
-delete unnecessary files from react
-delete favicon
+connect mongoose
 push to master
+
 
 first get endpoints and then switch to front end
