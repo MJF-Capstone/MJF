@@ -24,6 +24,3 @@ push to master
 
 
 first get endpoints and then switch to front end
-
-client = npm run start
-server = node server.js
