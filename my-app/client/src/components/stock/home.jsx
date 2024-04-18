@@ -18,8 +18,8 @@ function Home() {
         return (
             <div className="Modal">
                 <header className="Modal-header">
-                    <h2>Register</h2>
-                    <h2>Log in</h2>
+                  <a href="/login"><button>LOGIN</button></a><br></br>
+                  <a href="/register"><button>REGISTER</button></a>
                 </header>
             </div>
         )

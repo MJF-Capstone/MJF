@@ -23,7 +23,7 @@ html, body, div {
     background-position: center center; 
     height: 100vh; 
     width: 100vw; 
-    filter: grayscale(65%);
+    filter: grayscale(40%);
     position: relative;
   }
 
@@ -70,12 +70,30 @@ html, body, div {
     text-align: center;
   }
 
-  h2 {
-    text-decoration: underline;
-    text-underline-offset: 5pt;
+  .Modal-header {
     text-align: center;
-    font-size: 35px;
-    color: antiquewhite;
+    padding-top: 7rem;
+  }
+  
+  button {
+    border-radius: 25px;
+    /* text-decoration: underline; */
+    text-underline-offset: 5pt;
+    font-size: 35pt;
+    /* background-color: black; */
+    /* background-color: rgba(153, 76, 76, 0.558); */
+    /* background-color: rgba(40, 18, 5, 0.545); */
+    background-color: rgba(146, 70, 26, 0.545);
+
+    /* filter: brightness(1); */
+    /* background: none; */
+    margin: 2rem;
+    border: none;
+    letter-spacing: 1rem;
+    /* color: rgb(38, 252, 124); */
+    /* color: rgb(26, 252, 33); */
+    color: #4efa6a;
+    font-weight: bolder;
   }
 
   .App-header {
