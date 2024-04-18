@@ -5,8 +5,8 @@ const jwt = require('jsonwebtoken')
 
 router.post('/register', async (req, res) => {
     try{
-        const { firstName, lastName, shopName, shopId} = req.body
-        const newUser = new User({  firstName, lastName, shopName, shopId})
+        const { firstName, lastName, shopName, userId} = req.body
+        const newUser = new User({  firstName, lastName, shopName, userId})
     } catch{}
 })
 

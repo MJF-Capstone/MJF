@@ -16,7 +16,7 @@ const User = new mongoose.Schema(
             type: String,
             required: true
         },
-        shopId: {
+        userId: {
             type: String,
             required: true
         },
