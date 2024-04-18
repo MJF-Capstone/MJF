@@ -4,59 +4,12 @@ const cors = require("cors")
 const { dbConnect } = require('./db.js')
 const port = process.env.PORT || 8000;
 const app = express();
-// const router = require('express').Router()
-const router = express.Router()
-
-const Stock = require('./models/stock.js');
-
+const Stock = require('./controllers/Stock')
 
 app.use(cors())
 app.use(express.json())
 
-app.get('/', (req, res) => {
-  console.log("Something happened")
-  res.send('Hello World!!!');
-});
-
-router.get('/stockdashboard', async (req, res) => {
-  try {
-    const stocks = await Stock.find({});
-    if (!stocks.length) {
-      return res.status(404).json({ message: 'No stock found.' })
-  }
-  res.status(200).json(stocks);
-  } catch (err) {
-  console.log(err);
-  res.status(500).json({ message: `${err}` })
-  }
-});
-
-router.get('/home', async (req, res) => {
-  res.json({ message: "Welcome to the Home page"})
-});
-
-
-router.post('/add', async (req, res) => {
-  try {
-    const { itemName, productNumber, stockCount, expirationDate, brandName } = req.body;
-    if (!itemName || !productNumber || !stockCount || !expirationDate || !brandName) {
-      return res.status(400).json({ message: 'All fields are required.' });
-    }
-    const newStock = new Stock({
-      itemName,
-      productNumber,
-          stockCount,
-          expirationDate,
-          brandName
-        });
-        await newStock.save();
-      res.status(201).json(newStock);
-    } catch (error) {
-      console.error('Could not add new stock item:', error);
-    }
-  });
-  
-  app.use('/stock', router);
+  app.use('/stock', Stock);
   
   app.use((req, res, next) => {
     res.header("Content-Type",'application/json');
