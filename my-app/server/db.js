@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const DB_URL = process.env.DB_URL + "Coffee Inventory"
+const DB_URL = process.env.DB_URL + "CoffeeInventory"
 
 const dbConnect = async () => {
     try {

@@ -1,2 +1,0 @@
-# MJF
-Capstone
