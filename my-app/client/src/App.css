@@ -70,6 +70,14 @@ html, body, div {
     text-align: center;
   }
 
+  h2 {
+    text-decoration: underline;
+    text-underline-offset: 5pt;
+    text-align: center;
+    font-size: 35px;
+    color: antiquewhite;
+  }
+
   .App-header {
     margin-top: 40px;
     margin-bottom: 40px;

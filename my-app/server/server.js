@@ -4,12 +4,14 @@ const cors = require("cors")
 const { dbConnect } = require('./db.js')
 const port = process.env.PORT || 8000;
 const app = express();
-const router = require('express').Router()
+// const router = require('express').Router()
+const router = express.Router()
+
 const Stock = require('./models/stock.js');
 
 
-app.use(express.json())
 app.use(cors())
+app.use(express.json())
 
 app.get('/', (req, res) => {
   console.log("Something happened")
@@ -29,35 +31,42 @@ router.get('/stockdashboard', async (req, res) => {
   }
 });
 
-app.use('/stock', router);
-app.use((req, res, next) => {
-  res.header("Content-Type",'application/json');
-  next();
+router.get('/home', async (req, res) => {
+  res.json({ message: "Welcome to the Home page"})
 });
+
 
 router.post('/add', async (req, res) => {
   try {
-      const { itemName, productNumber, stockCount, expirationDate, brandName } = req.body;
-      if (!itemName || !productNumber || !stockCount || !expirationDate || !brandName) {
-          return res.status(400).json({ message: 'All fields are required.' });
-      }
-      const newStock = new Stock({
-          itemName,
-          productNumber,
+    const { itemName, productNumber, stockCount, expirationDate, brandName } = req.body;
+    if (!itemName || !productNumber || !stockCount || !expirationDate || !brandName) {
+      return res.status(400).json({ message: 'All fields are required.' });
+    }
+    const newStock = new Stock({
+      itemName,
+      productNumber,
           stockCount,
           expirationDate,
           brandName
-      });
-      await newStock.save();
+        });
+        await newStock.save();
       res.status(201).json(newStock);
-  } catch (error) {
+    } catch (error) {
       console.error('Could not add new stock item:', error);
     }
-});
+  });
+  
+  app.use('/stock', router);
+  
+  app.use((req, res, next) => {
+    res.header("Content-Type",'application/json');
+    next();
+  });
 
-app.listen(port, async () => {
-  await dbConnect()
-  console.log('Server listening on port: ' + port)
-})
+
+  app.listen(port, async () => {
+    await dbConnect()
+    console.log('Server listening on port: ' + port)
+  })
 
  
