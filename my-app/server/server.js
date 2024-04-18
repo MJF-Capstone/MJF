@@ -7,10 +7,10 @@ const app = express();
 
 // const Message = require('./models/Messages.js')
 
-// const userAuth = require('./controllers/user-auth.js')
+const userAuth = require('./controllers/user-auth.js')
 app.use(express.json())
 app.use(cors())
-// app.use('/user-auth', userAuth)
+app.use('/user-auth', userAuth)
 
 app.listen(port, () => {
   dbConnect()
