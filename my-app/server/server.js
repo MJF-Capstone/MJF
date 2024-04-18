@@ -6,20 +6,14 @@ const port = process.env.PORT || 8000;
 const app = express();
 const Stock = require('./controllers/Stock')
 
-app.use(cors())
+const userAuth = require('./controllers/user-auth.js')
 app.use(express.json())
+app.use(cors())
+app.use('/user-auth', userAuth)
+app.use('/stock', Stock);
 
-  app.use('/stock', Stock);
-  
-  app.use((req, res, next) => {
-    res.header("Content-Type",'application/json');
-    next();
-  });
+app.listen(port, () => {
+  dbConnect()
+  console.log('listening on port: ' + port)
+})
 
-
-  app.listen(port, async () => {
-    await dbConnect()
-    console.log('Server listening on port: ' + port)
-  })
-
- 
