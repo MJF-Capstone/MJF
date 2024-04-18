@@ -4,8 +4,9 @@ const cors = require("cors")
 const { dbConnect } = require('./db.js')
 const port = process.env.PORT || 8000;
 const app = express();
+const router = require('express').Router()
+const Stock = require('./models/stock.js');
 
-// const Message = require('./models/Messages.js')
 
 const userAuth = require('./controllers/user-auth.js')
 app.use(express.json())

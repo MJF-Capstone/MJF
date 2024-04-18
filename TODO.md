@@ -25,5 +25,19 @@ push to master
 
 first get endpoints and then switch to front end
 
-client = npm run start
-server = node server.js
+server = npm run dev (backend) 
+client = npm run start (frontend)
+
+fullstack = restaurant 
+frontend = dining room 
+    waiter (api) - bringing stuff from kitchen to dinning room
+server/backend = kitchen
+
+
+write update endpoint
+write supply order endpoint
+write shipment endpoint
+
+axios needed?
+
+
