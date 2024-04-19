@@ -5,7 +5,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import StockDashboard from './components/stock/stock-dashboard'; 
 import Home from './components/stock/home';
+import Filter from './components/stock/filter';
 import Login from './components/auth/verification';
+import Registration from './components/auth/registration';
 
 function App() {
   return (
@@ -21,9 +23,11 @@ function App() {
         <Router>
           <div>
             <Routes>
-              <Route path="stock/stockdashboard" element={<StockDashboard />} />
-              <Route path="stock/home" element={<Home />} />
-              <Route path="auth/verification" element={<Login />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/register" element={<Registration />} />
+              <Route path="/verification" element={<Login />} />
+              <Route path="/stockdashboard" element={<StockDashboard />} />
+              <Route path="/filter" element={<Filter />} />
             </Routes>
           </div>
         </Router>

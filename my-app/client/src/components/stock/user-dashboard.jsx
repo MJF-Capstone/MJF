@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../../App.css';
 // import Login from '../auth/verification';'../../../../server/controllers/user-auth';
-// import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
-function Home() {
+function UserDashboard() {
     const [data, setData] = useState(null);
     const [login, setLogin] = useState('');
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
     useEffect(() => {
         const token = localStorage.getItem('token');
@@ -37,14 +37,10 @@ function Home() {
         return (
             <div className="Modal">
                 <header className="Modal-header">
-                    {/* <button onClick={() => navigate("/login")}>LOGIN</button>
-                    <button onClick={() => navigate("/register")}>REGISTER</button>
-                    {login && <div>{login}</div>} */}
-                  <a href="/verification"><button>LOGIN</button></a><br></br>
-                  <a href="/register"><button>REGISTER</button></a>
+                    <h1>Welcome to your dashboard, User</h1>
                 </header>
             </div>
         )
 }
 
-export default Home;
+export default UserDashboard;

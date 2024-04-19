@@ -72,6 +72,8 @@ html, body, div {
     text-decoration: underline;
     text-underline-offset: 5pt;
     text-align: center;
+    color: yellow;
+    font-size: 30pt;
   }
 
   .Modal-header {

@@ -35,25 +35,25 @@ router.get('/stockdashboard', async (req, res) => {
   });
   
   
-  router.post('/add', async (req, res) => {
-    try {
-      const { itemName, productNumber, stockCount, expirationDate, brandName } = req.body;
-      if (!itemName || !productNumber || !stockCount || !expirationDate || !brandName) {
-        return res.status(400).json({ message: 'All fields are required.' });
-      }
-      const newStock = new Stock({
-        itemName,
-        productNumber,
-            stockCount,
-            expirationDate,
-            brandName
-          });
-          await newStock.save();
-        res.status(201).json(newStock);
-      } catch (error) {
-        console.error('Could not add new stock item:', error);
-      }
-    });
+  // router.post('/add', async (req, res) => {
+  //   try {
+  //     const { itemName, productNumber, stockCount, expirationDate, brandName } = req.body;
+  //     if (!itemName || !productNumber || !stockCount || !expirationDate || !brandName) {
+  //       return res.status(400).json({ message: 'All fields are required.' });
+  //     }
+  //     const newStock = new Stock({
+  //       itemName,
+  //       productNumber,
+  //           stockCount,
+  //           expirationDate,
+  //           brandName
+  //         });
+  //         await newStock.save();
+  //       res.status(201).json(newStock);
+  //     } catch (error) {
+  //       console.error('Could not add new stock item:', error);
+  //     }
+  //   });
     
 
     router.get('/', (req, res) => {
