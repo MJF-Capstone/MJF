@@ -19,7 +19,7 @@ function Home() {
             <div className="Modal">
                 <header className="Modal-header">
                   <a href="/login"><button>LOGIN</button></a><br></br>
-                  <a href="/register"><button>REGISTER</button></a>
+                  <a href="user-auth/register"><button>REGISTER</button></a>
                 </header>
             </div>
         )

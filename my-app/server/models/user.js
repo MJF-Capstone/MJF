@@ -16,7 +16,7 @@ const User = new mongoose.Schema(
             type: String,
             required: true
         },
-        userId: {
+        employeeId: {
             type: String,
             required: true
         },
