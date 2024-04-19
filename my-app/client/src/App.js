@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import StockDashboard from './components/stock/stock-dashboard'; 
 import Home from './components/stock/home';
+import Login from './components/auth/verification';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Routes>
               <Route path="stock/stockdashboard" element={<StockDashboard />} />
               <Route path="stock/home" element={<Home />} />
+              <Route path="auth/verification" element={<Login />} />
             </Routes>
           </div>
         </Router>
