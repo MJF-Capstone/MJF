@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import StockDashboard from './components/stock/stock-dashboard'; 
 import Home from './components/stock/home';
 import Filter from './components/stock/filter';
+import UserDashboard from './components/stock/user-dashboard';
 import Login from './components/auth/verification';
 import Registration from './components/auth/registration';
 
@@ -26,6 +27,7 @@ function App() {
               <Route path="/home" element={<Home />} />
               <Route path="/register" element={<Registration />} />
               <Route path="/verification" element={<Login />} />
+              <Route path="/user-dashboard" element={<UserDashboard />} />
               <Route path="/stockdashboard" element={<StockDashboard />} />
               <Route path="/filter" element={<Filter />} />
             </Routes>
