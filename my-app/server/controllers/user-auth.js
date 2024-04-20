@@ -32,26 +32,26 @@ router.post('/register', async (req, res) => {
 });
 
 router.post('/login', async (req, res) => {
-    try{
-        const { shopName, userId} = req.body;
+    try {
+        const { shopName, userId } = req.body;
 
-        const user = await User.findOne({ $or: [{shopName}, {email: shopName}] })
-        if(!user) {
-            return res.status(401).json({error: "User Not found"});
-        } 
-
-        const employeeIdMatch = await bcrypt.compare(userId, user.employeeId);
-        if(!employeeIdMatch) {
-            return res.status(401).json({ error: "Incorrect User Id"});
+        const user = await User.findOne({ $or: [{ shopName }, { email: shopName }] })
+        if (!user) {
+            return res.status(401).json({ error: "User Not found" });
         }
 
-        const token =jwt.sign({ userId: user._id }, JWT_KEY)
+        const employeeIdMatch = await bcrypt.compare(userId, user.employeeId);
+        if (!employeeIdMatch) {
+            return res.status(401).json({ error: "Incorrect User Id" });
+        }
 
-        res.status(200).json({ message: "Login successful", token});
+        const token = jwt.sign({ userId: user._id }, JWT_KEY)
+
+        res.status(200).json({ message: "Login successful", token });
 
     } catch (error) {
         console.error("Error during login:", error);
-        res.status(500).json({error: "Internal Server Error"})
+        res.status(500).json({ error: "Internal Server Error" })
     }
 })
 
