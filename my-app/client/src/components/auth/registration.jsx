@@ -23,7 +23,7 @@ function Registration() {
           isAdmin,
         });
         console.log('registration successful', response.data);
-        navigate('/user-dashboard');    
+        navigate('/userdashboard');    
       } catch (err) {
         console.log(err);}}
 
@@ -40,7 +40,7 @@ function Registration() {
                 <input type="checkbox" checked={isAdmin} onChange={e => setIsAdmin(e.target.checked)}/>
               {/* </label> */}
             </div>
-            <button className='registerButton' type="submit">Register</button>
+            <button className='registerButton' type="submit">Submit</button>
         </form>
     </div>
   );
