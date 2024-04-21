@@ -28,21 +28,20 @@ function Registration() {
         console.log(err);}}
 
  return (
-    <div className="App">
-      <header className="App-header">
+    <div className="registration">
         <form onSubmit={handleRegistration}>
-        <input type="text" value={firstName} onChange={e => setFirstName(e.target.value)} placeholder="First Name" required />
-            <input type="text" value={lastName} onChange={e => setLastName(e.target.value)} placeholder="Last Name" required />
-            <input type="text" value={shopName} onChange={e => setShopName(e.target.value)} placeholder="Shop Name" required />
-            <input type="password" value={employeeId} onChange={e => setEmployeeId(e.target.value)} placeholder="Employee ID" required />
+        <input className='registerButton' type="text" value={firstName} onChange={e => setFirstName(e.target.value)} placeholder="First Name" required /><br/>
+            <input className='registerButton'type="text" value={lastName} onChange={e => setLastName(e.target.value)} placeholder="Last Name" required /><br/>
+            <input className='registerButton'type="text" value={shopName} onChange={e => setShopName(e.target.value)} placeholder="Shop Name" required /><br/>
+            <input className='registerButton'type="password" value={employeeId} onChange={e => setEmployeeId(e.target.value)} placeholder="Employee ID" required /><br/>
             <div>
-              <label>
-                <input type="checkbox" checked={isAdmin} onChange={e => setIsAdmin(e.target.checked)} />
-              </label>
+              {/* <label> */}
+              <p4>Admin?</p4>
+                <input type="checkbox" checked={isAdmin} onChange={e => setIsAdmin(e.target.checked)}/>
+              {/* </label> */}
             </div>
-            <button type="submit">Register</button>
+            <button className='registerButton' type="submit">Register</button>
         </form>
-      </header>
     </div>
   );
 }

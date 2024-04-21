@@ -15,18 +15,18 @@ function App() {
     <div className="backgroundImage" style={{
         backgroundImage: "url('https://images.unsplash.com/photo-1525088553748-01d6e210e00b?q=80&w=2976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
       }}>
-      <div className="App">
-        <header className="App-header">
+      <div className="Name">
+        {/* <header className="App-header"> */}
           <p1>Coffee </p1>
           <p3>Keeper</p3>
-        </header>
+        {/* </header> */}
         <Router>
           <div>
             <Routes>
               <Route path="/home" element={<Home />} />
               <Route path="/register" element={<Registration />} />
               <Route path="/verification" element={<Login />} />
-              <Route path="/user-dashboard" element={<UserDashboard />} />
+              <Route path="/userdashboard" element={<UserDashboard />} />
               <Route path="/stockdashboard" element={<StockDashboard />} />
               <Route path="/filter" element={<Filter />} />
             </Routes>
