@@ -32,7 +32,6 @@ router.put('/update/:id', async (req, res) => {
   const { itemName, stockCount } = req.body;
   try {
     const updatedStock = await Stock.findByIdAndUpdate(id, { itemName, stockCount }, { new: true });
-    // const updatedStock = await updateStockById(id, updatedData);
   if (!updatedStock) {
     return res.status(404).send('stock not found');
   }
@@ -73,7 +72,7 @@ router.post('/add', async (req, res) => {
     });
 
     const savedStock = await newStock.save();
-    res.status(201).json(savedStock); // 201 Created
+    res.status(201).json(savedStock); 
   } catch (error) {
     console.error('Error adding new stock:', error);
     res.status(500).send('Error adding new stock');
