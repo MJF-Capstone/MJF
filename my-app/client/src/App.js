@@ -18,7 +18,6 @@ function App() {
       <div className="App">
         <header className="App-header">
           <p1>Coffee </p1>
-          {/* <p2>Shop </p2> */}
           <p3>Keeper</p3>
         </header>
         <Router>
@@ -35,7 +34,6 @@ function App() {
         </Router>
       </div>
       <div className="AddStock">
-        {/* <h2>Add Stock Page</h2> */}
       </div>
       </div>
    

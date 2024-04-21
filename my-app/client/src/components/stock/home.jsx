@@ -37,9 +37,6 @@ function Home() {
         return (
             <div className="Modal">
                 <header className="Modal-header">
-                    {/* <button onClick={() => navigate("/login")}>LOGIN</button>
-                    <button onClick={() => navigate("/register")}>REGISTER</button>
-                    {login && <div>{login}</div>} */}
                   <a href="/verification"><button>LOGIN</button></a><br></br>
                   <a href="/register"><button>REGISTER</button></a>
                 </header>

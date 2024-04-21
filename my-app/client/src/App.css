@@ -76,6 +76,12 @@ html, body, div {
     font-size: 30pt;
   }
 
+  .editbutton {
+    color: red;
+    font-size: 10pt;
+    background: none;
+  }
+
   .Modal-header {
     text-align: center;
     padding-top: 7rem;
@@ -106,8 +112,26 @@ html, body, div {
     margin-top: 40px;
     margin-bottom: 40px;
     margin-right: 600px;
+    /* z-index: 990; */
   }
 
+  .editModal {
+    position: fixed; 
+    top: 50%;  
+    left: 50%; 
+    text-align: center; 
+    transform: translate(-50%, -50%); 
+    width: 80%; 
+    height: auto;
+    max-width: 400px; 
+    background-color: rgb(23, 207, 239); 
+    padding: 10px; 
+    border: 5px solid #ccc;  
+    border-radius: 10px;  
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);  
+    z-index: 1000; 
+    overflow: hidden; 
+} 
 
   .stockDashboardContainer {
     height: 50vh; 
@@ -120,6 +144,18 @@ html, body, div {
     color: white; 
     margin: auto; 
     border-radius: 5px; 
+    position: relative;
+    z-index: 1;
+}
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.4); /* Black background with opacity */
+  z-index: 999; /* Right behind the modal */
 }
 
 .stockDashboardContainer ul {

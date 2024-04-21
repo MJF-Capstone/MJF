@@ -9,7 +9,7 @@ function Registration() {
   const [shopName, setShopName] = useState('');
   const [employeeId, setEmployeeId] = useState('');
   const [isAdmin, setIsAdmin] = useState(false);
-  const [error, setError] = useState('');
+  // const [error, setError] = useState('');
   const navigate = useNavigate();
 
     const handleRegistration = async (e) => {
