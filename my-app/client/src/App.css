@@ -234,6 +234,24 @@ html, body, div {
   color: bisque;
 } */
 
+.stock-item{
+  /* align-items: center; */
+  /* align-items: right; */
+  /* justify-content: right; */
+  /* padding: 10rem; */
+}
+
+ul{
+  display: inline-flex;
+  /* margin: auto; */
+  border: 0;
+  margin: 0;
+  padding: 0;
+  /* border: white solid rgba(255,255,255); */
+  /* padding: 10rem; */
+  
+}
+
 .registerButton{
   text-align: center;
   margin: 2rem;

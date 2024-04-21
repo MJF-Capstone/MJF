@@ -26,6 +26,9 @@ const Stock = new mongoose.Schema(
             type: String,
             required: true,
         },
+        imageUrl: {
+            type: String,
+        },
     },
     { timestamps: true }
 );

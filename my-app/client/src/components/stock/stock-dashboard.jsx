@@ -94,16 +94,21 @@ const openAddNew = () => {
 
 return (
     <div className="stockDashboardContainer">
-            <div className="backgroundImage1" style={{
+            {/* <div className="backgroundImage1" style={{
         backgroundImage: "url('https://images.unsplash.com/photo-1525610553991-2bede1a236e2?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEyfHx8ZW58MHx8fHx8')"
-      }}>
+      }}> */}
         <h1>Inventory</h1>
         <button type="button" className="addButton" onClick={openAddNew}>Add New Item</button>
         {stocks.length > 0 ? (
             <ul>
                 {stocks.map(stock => (
                     <li key={stock._id} onClick={() => handleEditClick(stock)}>
-                        {stock.itemName} - Quantity: {stock.stockCount}<br/>
+                         <div className="stock-item">
+                         <img src={stock.imageUrl} alt={stock.itemName} style={{ width: '100px', height: '100px' }} />
+                         </div>
+                          <h3>{stock.itemName}</h3>
+                            <p>Quantity: {stock.stockCount}</p> 
+                        {/* {stock.itemName} - Quantity: {stock.stockCount}<br/> */}
                     </li>
                 ))}
             </ul>
@@ -140,7 +145,7 @@ return (
                     </div>
                 </div>
             )}</div>
-        </div>
+        // </div>
     );
 }
 

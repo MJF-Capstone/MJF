@@ -61,14 +61,15 @@ router.delete('/delete/:id', async (req, res) => {
 
 router.post('/add', async (req, res) => {
   console.log('You hit the ADD endpoint');
-  const { itemName, stockCount, productNumber, expirationDate, brandName } = req.body;
+  const { itemName, stockCount, productNumber, expirationDate, brandName, imageUrl } = req.body;
   try {
     const newStock = new Stock({
       itemName,
       productNumber,
       stockCount,
       expirationDate,
-      brandName
+      brandName,
+      imageUrl
     });
 
     const savedStock = await newStock.save();
