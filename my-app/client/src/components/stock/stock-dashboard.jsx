@@ -376,19 +376,19 @@ return (
                 <div className="editModal" onClick={e => e.stopPropagation()}>
                     <form onSubmit={e => e.preventDefault()}>
                         <label>Item Name:
-                            <input type="text" name="itemName" value={currentStock.itemName || ''} onChange={handleChange} required />
+                            <input type="text" input className="inputField" name="itemName" value={currentStock.itemName || ''} onChange={handleChange} required />
                         </label>
                         <label>Product Number:
-                            <input type="text" name="productNumber" value={currentStock.productNumber || ''} onChange={handleChange} />
+                            <input type="text" input className="inputField" name="productNumber" value={currentStock.productNumber || ''} onChange={handleChange} />
                         </label>
                         <label>Stock Count:
-                            <input type="number" name="stockCount" value={currentStock.stockCount || ''} onChange={handleChange} required />
+                            <input type="number" input className="inputField" name="stockCount" value={currentStock.stockCount || ''} onChange={handleChange} required />
                         </label>
                         <label>Expiration Date:
-                            <input type="date" name="expirationDate" value={currentStock.expirationDate || ''} onChange={handleChange} />
+                            <input type="date" input className="inputField" name="expirationDate" value={currentStock.expirationDate || ''} onChange={handleChange} />
                         </label>
                         <label>Brand Name:
-                            <input type="text" name="brandName" value={currentStock.brandName || ''} onChange={handleChange} required />
+                            <input type="text" input className="inputField"name="brandName" value={currentStock.brandName || ''} onChange={handleChange} required />
                         </label>
                         <button className="editbutton" onClick={handleSave}>Save</button>
                         <button className="editbutton" onClick={handleClose}>Cancel</button>
