@@ -11,7 +11,8 @@ router.post('/register', async (req, res) => {
         const { firstName, lastName, shopName, employeeId, isAdmin } = req.body;
         const newUser = new User({ firstName, lastName, shopName, employeeId, isAdmin });
         await newUser.save();
-        const token = jwt.sign({ userId: newUser._id }, JWT_KEY);
+        // const token = jwt.sign({ userId: newUser._id }, JWT_KEY);
+        const token = jwt.sign({ userId: newUser._id }, "coffeeinventory");
         res.status(201).json({ message: 'You have created a new user!', newUser, token });
     } catch (error) {
         console.error("Error during registration:", error);

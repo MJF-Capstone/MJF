@@ -31,15 +31,22 @@ function Login() {
     };
             
     return (
+      <div className="homeBackgroundImage" style={{
+        backgroundImage: "url('https://images.unsplash.com/photo-1525088553748-01d6e210e00b?q=80&w=2976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
+      }}>
+                  <div className="Name">
+        {/* <header className="App-header"> */}
+          <p1>Coffee </p1>
+          <p3>Keeper</p3>
        <div className="input-form">
            <input
               type="text"
               value={username}
               placeholder="Username"
               onChange={e => {
-                  setUsername(e.target.value)
+                setUsername(e.target.value)
               }}
-          />
+              />
           <br />
           <input
               type="password"
@@ -47,7 +54,7 @@ function Login() {
               onChange={e =>
                 setPassword(e.target.value)}
                 placeholder="Password"
-          />
+                />
           {/* Render error message if login is invalid */}
           {invalid && <span className="invalid">Invalid username or password</span>}
           <br />
@@ -57,8 +64,9 @@ function Login() {
           </button>
 <h1>
                Don't have an account? </h1><Link to="/register"><h1>Create Account</h1></Link>
+                </div>
       </div>
-    
+    </div>
     )
 }
 

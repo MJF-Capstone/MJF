@@ -93,10 +93,17 @@ const openAddNew = () => {
 };
 
 return (
-    <div className="stockDashboardContainer">
-            {/* <div className="backgroundImage1" style={{
-        backgroundImage: "url('https://images.unsplash.com/photo-1525610553991-2bede1a236e2?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEyfHx8ZW58MHx8fHx8')"
-      }}> */}
+    <div className="homeBackgroundImage" style={{
+        backgroundImage: "url('https://images.unsplash.com/photo-1493925410384-84f842e616fb?q=80&w=2865&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
+              }}>
+                 <div className="Name">
+        {/* <header className="App-header"> */}
+          <p1>Coffee </p1>
+          <p3>Keeper</p3>
+        <div className="stockDashboardContainer">
+            {/* <div className="backgroundImage1" style={{ */}
+        {/* backgroundImage: "url('https://images.unsplash.com/photo-1525610553991-2bede1a236e2?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEyfHx8ZW58MHx8fHx8')" */}
+      {/* }}> */}
         <h1>Inventory</h1>
         <button type="button" className="addButton" onClick={openAddNew}>Add New Item</button>
         {stocks.length > 0 ? (
@@ -144,8 +151,10 @@ return (
                         </form>
                     </div>
                 </div>
-            )}</div>
-        // </div>
+            )}
+            </div>
+            </div>
+        </div>
     );
 }
 
@@ -156,52 +165,3 @@ export default StockDashboard;
 
 
 
-
-
-
-
-
-
-
-
-
-
-    // const handleSave = () => {
-    //     if (currentStock?._id) {
-    //     const url = `http://localhost:8000/stock/update/${currentStock._id}`;
-    //     axios.put(url, currentStock)
-    //         .then(response => {
-    //             const updatedStock = stocks.map(stock => {
-    //                 if (stock._id === currentStock._id) {
-    //                     return {...stock, ...response.data};
-    //                 }
-    //                 return stock;
-    //     })
-    //     setStocks(updatedStock)
-    //     setIsEditing(false);
-    //     setIsAddingNew(false);
-    // })
-       // .catch(error => {
-    //             console.error('Could not updated stock', error);
-    //             setError('fafiled to update stock');
-    //         });
-    //     }
-    // };
-
-
-
-    // const handleDelete = async () => {
-    //     if (currentStock?._id) {
-    //     const url = `http://localhost:8000/stock/delete/${currentStock._id}`;
-    //     try {
-    //         await axios.delete(url);
-    //         const filteredStocks = stocks.filter(stock => stock._id !== currentStock._id);
-    //         setStocks(filteredStocks)
-    //         setIsEditing(false);
-    //     } catch (error) {
-    //         console.error('could not delete stock', error);
-    //         setError('failed to delete stock');
-    //     }
-    // };
-    // }
-    
