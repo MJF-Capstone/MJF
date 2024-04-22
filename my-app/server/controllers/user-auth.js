@@ -1,17 +1,4 @@
-// const router = require('express').Router()
-// const User = require('../models/user')
-// const bcrypt = require('bcrypt')
-// const jwt = require('jsonwebtoken')
-
-// router.post('/register', async (req, res) => {
-//     try{
-//         const { firstName, lastName, shopName, userId} = req.body
-//         const newUser = new User({  firstName, lastName, shopName, userId})
-//     } catch{}
-// })
-
-// module.exports = router
-
+//Hi I did this -Frans
 const router = require('express').Router();
 const User = require('../models/user');
 const bcrypt = require('bcrypt');
@@ -69,6 +56,7 @@ router.delete('/:userId', async (req, res) => {
         res.status(500).json({ error: "Internal Server Error" });
     }
 });
+
 
 module.exports = router;
 
