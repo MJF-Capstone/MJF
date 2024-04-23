@@ -13,15 +13,42 @@ router.get('/home', async (req, res) => {
 });
 
 router.get('/stockdashboard', async (req, res) => {
-    try {
-      const stocks = await Stock.find({});
-      if (!stocks.length) {
-        return res.status(404).json({ message: 'No stock found.' })
+  try {
+    const stocks = await Stock.find({});
+    if (!stocks.length) {
+      return res.status(404).json({ message: 'No stock found.' })
     }
     res.status(200).json(stocks);
-    } catch (err) {
+  } catch (err) {
     console.log(err);
     res.status(500).json({ message: `${err}` })
+  }
+});
+
+
+// router.get('/users', async (req, res) => {
+//   try {
+//     const users = await User.find({});
+//     if (!users.length) {
+//       return res.status(404).json({ message: 'No users found.' })
+//   }
+//   res.status(200).json(stocks);
+//   } catch (err) {
+//   console.log(err);
+//   res.status(500).json({ message: `${err}` })
+//   }
+// });
+
+router.get('/home', async (req, res) => {
+  res.json({ message: "Welcome to the Home page" })
+});
+
+
+router.post('/add', async (req, res) => {
+  try {
+    const { itemName, productNumber, stockCount, expirationDate, brandName } = req.body;
+    if (!itemName || !productNumber || !stockCount || !expirationDate || !brandName) {
+      return res.status(400).json({ message: 'All fields are required.' });
     }
   });
 
