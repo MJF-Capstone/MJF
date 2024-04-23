@@ -19,20 +19,26 @@ html, body, div {
   }
 }
 
-.backgroundImage {
+.App-header{
+  color: yellow;
+}
+
+
+.homeBackgroundImage {
     background-repeat: no-repeat; 
     animation: zoomOutBackground 4s ease-out forwards; 
-    background-image: url('https://images.unsplash.com/photo-1587743168662-d84a78a9c2e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80');
+    /* background-image: url('https://images.unsplash.com/photo-1493925410384-84f842e616fb?q=80&w=2865&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); */
+    /* background-image: url('https://images.unsplash.com/photo-1587743168662-d84a78a9c2e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80'); */
     background-size: 150%;
     background-position: center center; 
     height: 100vh; 
     width: 100vw; 
-    filter: grayscale(40%);
+    filter: grayscale(30%);
     position: relative;
   }
 
   p1 {
-    font-size: 95pt;
+    font-size: 100pt;
     font-weight: bolder;
     font-style: italic;
     /* color: rgb(39, 16, 5); */
@@ -40,72 +46,161 @@ html, body, div {
     letter-spacing: 5pt;
     /* color: rgb(168, 52, 26); */
     color: rgb(201, 106, 12);
-    z-index: 10;
+    /* z-index: 10; */
     position: relative;
   }
   
-  p2 {
+  /* p2 {
     font-size: 95pt;
     /* color: rgb(65, 14, 14); */
-    /* color: rgb(189, 75, 19); */
+    /* color: rgb(189, 75, 19); 
     font-weight: bolder;
     font-style: italic;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     letter-spacing: 5pt;
     z-index: 10;
     position: relative;
-  }
+  } */
   
   p3 {
     font-size: 95pt;
-    color: rgb(40, 18, 5);
+    /* color: rgb(40, 18, 5); */
+    color: rgb(182, 68, 1);
     font-weight: bolder;
     /* color: rgb(240, 107, 12); */
     font-style: italic;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     letter-spacing: 5pt;
-    z-index: 10;
+    /* z-index: 10; */
     position: relative;
+  }
+
+  p4 {
+    margin: .3rem;
+    color: yellow;
+    font-size: 20pt;
   }
 
   h1 {
     text-decoration: underline;
     text-underline-offset: 5pt;
     text-align: center;
+    color: yellow;
+    font-size: 30pt;
   }
+
+  .editbutton {
+    color: red;
+    /* padding: 0; */
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    /* margin: 2rem; */
+    margin-bottom: 2rem;
+    margin-top: 0.2rem;
+    letter-spacing: 0.2rem;
+    font-size: 15pt;
+    background: none;
+  }
+
+  /* .Modal-header {
+    text-align: center;
+    padding-top: 7rem;
+  } */
 
   .Modal-header {
     text-align: center;
     padding-top: 7rem;
   }
   
+  .homeButton {
+    color: azure;
+    font-size: 30pt;
+    margin: 2rem;
+    margin-top: 5rem;
+    /* display: inline-block; */
+    padding: 0;
+    border: 0;
+
+  }
+  
   button {
-    border-radius: 25px;
+    /* border-radius: 25px; */
     /* text-decoration: underline; */
     text-underline-offset: 5pt;
-    font-size: 35pt;
+    font-size: 15pt;
     /* background-color: black; */
     /* background-color: rgba(153, 76, 76, 0.558); */
     /* background-color: rgba(40, 18, 5, 0.545); */
-    background-color: rgba(146, 70, 26, 0.545);
+    /* background-color: rgba(146, 70, 26, 0.545); */
+    /* background-color: rgb(8, 5, 2); */
 
     /* filter: brightness(1); */
     /* background: none; */
     margin: 2rem;
+
+    padding: .6rem;
     border: none;
-    letter-spacing: 1rem;
+    /* letter-spacing: 1rem; */
     /* color: rgb(38, 252, 124); */
     /* color: rgb(26, 252, 33); */
-    color: #4efa6a;
+    color: #f91111;
+    /* color: #c92323; */
     font-weight: bolder;
   }
 
   .App-header {
-    margin-top: 40px;
-    margin-bottom: 40px;
-    margin-right: 600px;
+    /* margin-top: 40px; */
+    /* margin-bottom: 40px; */
+    /* margin-right: 600px; */
+    /* z-index: 990; */
   }
 
+  .editModal {
+    position: fixed; 
+    top: 50%;  
+    left: 50%; 
+    text-align: center; 
+    transform: translate(-50%, -50%); 
+    width: 80%; 
+    height: auto;
+    max-width: 500px; 
+    background-color: rgb(23, 207, 239); 
+    padding: 5px; 
+    border: 5px solid #ccc;  
+    border-radius: 10px;  
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);  
+    z-index: 1000; 
+    overflow: hidden; 
+} 
+
+
+/* .addModal {
+  position: fixed; 
+  top: 50%;  
+  left: 50%; 
+  text-align: center; 
+  transform: translate(-50%, -50%); 
+  width: 80%; 
+  height: auto;
+  max-width: 500px; 
+  background-color: rgb(23, 207, 239); 
+  padding: 5px; 
+  border: 5px solid #ccc;  
+  border-radius: 10px;  
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);  
+  z-index: 1000; 
+  overflow: hidden; 
+}  */
+
+
+  .inputField {
+    color: black;
+    /* margin: .5rem; */
+    display: block;
+    text-align: center;
+    margin: auto;
+  }
 
   .stockDashboardContainer {
     height: 50vh; 
@@ -118,6 +213,28 @@ html, body, div {
     color: white; 
     margin: auto; 
     border-radius: 5px; 
+    position: relative;
+    z-index: 1;
+}
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.4); /* Black background with opacity */
+  z-index: 999; /* Right behind the modal */
+}
+
+.modal-container1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.4); 
+  z-index: 999; 
 }
 
 .stockDashboardContainer ul {
@@ -134,6 +251,51 @@ html, body, div {
   text-align: center;
   color: bisque;
 } */
+
+.stock-item{
+  /* align-items: center; */
+  /* align-items: right; */
+  /* justify-content: right; */
+  /* padding: 10rem; */
+}
+
+ul{
+  display: inline-flex;
+  /* margin: auto; */
+  border: 0;
+  margin: 0;
+  padding: 0;
+  /* border: white solid rgba(255,255,255); */
+  /* padding: 10rem; */
+  
+}
+
+.registerButton{
+  text-align: center;
+  margin: 2rem;
+  /* background: none; */
+}
+
+
+.registration{
+  text-align: center;
+  background-color: black;
+  position: fixed; 
+  top: 50%;  
+  left: 50%; 
+  text-align: center; 
+  transform: translate(-50%, -50%); 
+  width: 80%; 
+  height: auto;
+  max-width: 500px; 
+  background-color: rgb(23, 207, 239); 
+  padding: 5px; 
+  border: 5px solid #ccc;  
+  border-radius: 10px;  
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);  
+  z-index: 1000; 
+  overflow: hidden; 
+}
 
 .App-logo {
   height: 40vmin;
