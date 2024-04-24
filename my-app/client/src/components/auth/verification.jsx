@@ -60,9 +60,10 @@ function Login() {
           {/* <br /> */}
           {/* Button to trigger login */}
                 </div>
-          <button className="addButton" onClick={handleLogin}>
+                <h1>
+          <button className="submitButton" onClick={handleLogin}>
               SUBMIT
-          </button>
+          </button></h1>
 <h4>
                Don't have an account? </h4><Link to="/register"><h4>Create Account</h4></Link>
       </div>
