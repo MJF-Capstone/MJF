@@ -104,19 +104,19 @@ return (
         backgroundImage:
 "url('https://images.unsplash.com/photo-1493925410384-84f842e616fb?q=80&w=2865&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
               }}>
-        <div className="Name">
+        {/* <div className="Name"> */}
         {/* <header className="App-header"> */}
           <p1>Coffee </p1>
           <p3>Keeper</p3>
-        {/* <div className="stockDashboardContainer"> */}
+          {/* </div> */}
+
+        <div className="stockDashboardContainer">
             {/* <div className="backgroundImage1" style={{ */}
         {/* backgroundImage:
 "url('https://images.unsplash.com/photo-1525610553991-2bede1a236e2?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEyfHx8ZW58MHx8fHx8')"
 */}
       {/* }}> */}
-        <h1>Inventory</h1>
-        <button type="button" className="addButton"
-onClick={openAddNew}>Add New Item</button>
+        {/* <h1>Inventory</h1> */}
         {/* <div className="stockImages"> */}
         {stocks.length > 0 ? (
             <ul>
@@ -129,11 +129,17 @@ alt={stock.itemName} style={{ width: '100px', height: '100px' }} />
                          {/* </div> */}
                          <img src={stock.imageUrl}></img>
                           <h3>{stock.itemName}</h3>
-                            <p>Quantity: {stock.stockCount}</p>
+                            <h3>Quantity: {stock.stockCount}</h3>
                         {/* {stock.itemName} - Quantity:
 {stock.stockCount}<br/> */}
                     </li>
                 ))}
+<h1><button type="button" className="addButton"
+onClick={openAddNew}>Add New Item</button></h1><br/>
+<h1><button type="button" className="addButton"
+onClick={openAddNew}>Filter</button></h1><br/>
+<h1><button type="button" className="addButton"
+onClick={openAddNew}>Search</button></h1>
             </ul>
         ) : <p>{error || 'No stocks found.'}</p>}
         {(isEditing || isAddingNew) && (
@@ -184,7 +190,6 @@ onClick={handleClose}>No</button>
                     </div>
                 </div>
             )}
-            </div>
             </div>
             // </div>
         // </div>
