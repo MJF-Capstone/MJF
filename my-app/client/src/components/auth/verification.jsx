@@ -4,8 +4,8 @@ import axios from 'axios';
 
 function Login() {
     // State variables to store user input and login status
-    const [username, setUsername] = useState("")
-    const [password, setPassword] = useState("")
+    const [shopName, setShopName] = useState("")
+    const [employeeId, setEmployeeId] = useState("")
     const [invalid, setInvalid] = useState(false)
     const navigate = useNavigate(); // State to track invalid login attempts
 
@@ -14,9 +14,9 @@ function Login() {
     // Function to handle user login
     const handleLogin = async () => {
       try {
-        const response =  await axios.post("http://localhost:8000/user-auth/verification", {
-           username,
-           password
+        const response =  await axios.post("http://localhost:8000/user-auth/login", {
+           shopName,
+           employeeId
         });
         if (response.data.token) {
           localStorage.setItem("token", response.data.token);
@@ -41,19 +41,19 @@ function Login() {
        <div className="input-form">
            <input
               type="text"
-              value={username}
-              placeholder="Username"
+              value={shopName}
+              placeholder="Shop Name"
               onChange={e => {
-                setUsername(e.target.value)
+                setShopName(e.target.value)
               }}
               />
           <br />
           <input
               type="password"
-              value={password}
+              value={employeeId}
               onChange={e =>
-                setPassword(e.target.value)}
-                placeholder="Password"
+                setEmployeeId(e.target.value)}
+                placeholder="Employee ID"
                 />
           {/* Render error message if login is invalid */}
           {invalid && <span className="invalid">Invalid username or password</span>}
