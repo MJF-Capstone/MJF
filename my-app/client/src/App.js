@@ -9,6 +9,7 @@ import Filter from './components/stock/filter';
 import UserDashboard from './components/stock/user-dashboard';
 import Login from './components/auth/verification';
 import Registration from './components/auth/registration';
+import UserProfile from './components/auth/user-profile'; 
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
               <Route path="/home" element={<Home />} />
               <Route path="/register" element={<Registration />} />
               <Route path="/verification" element={<Login />} />
+              <Route path="/userprofile" element={<UserProfile />} />
               <Route path="/userdashboard" element={<UserDashboard />} />
               <Route path="/stockdashboard" element={<StockDashboard />} />
               <Route path="/filter" element={<Filter />} />
