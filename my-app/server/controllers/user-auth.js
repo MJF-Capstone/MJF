@@ -5,6 +5,20 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const JWT_KEY = process.env.JWT_KEY;
 
+router.get('/:id', async (req, res) => {
+    console.log(req.params.id)
+    try {
+        const user = await User.findOne({ _id: req.params.id });
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+        res.status(200).json({ message: 'User found', user });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Server error' });
+    }
+});
+
 router.post('/register', async (req, res) => {
     try {
         const { firstName, lastName, shopName, employeeId, isAdmin } = req.body;

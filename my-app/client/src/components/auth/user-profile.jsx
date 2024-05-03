@@ -1,19 +1,30 @@
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import React, { useState, useEffect} from 'react'
-
-
-
 
 function UserProfile() {
-
     const [userInfo, setUserInfo] = useState(null);
+    const[userId, setUserId]= useState('');
 
     useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch('http://127.0.0.1:8000/user-auth/66299e010c378625c0c59ced',
+                    {
+                        method: "GET",
+                        headers: new Headers({ "Content-Type": "application/json" })
+                    });
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+                setUserInfo(data.user);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
 
-        const user ={
-          
-        }
-    })
+        fetchData();
+    }, [userId]);
 
     return (
         <div className="homeBackgroundImage" style={{
@@ -34,8 +45,18 @@ function UserProfile() {
                     <button className="homeButton">LOGOUT</button>
                 </Link>
             </div>
+            {userInfo && (
+                <div className="userInfo">
+                    <h2>User Profile</h2>
+                    <p>First Name: {userInfo.firstName}</p>
+                    <p>Last Name: {userInfo.lastName}</p>
+                    <p>Shop Name: {userInfo.shopName}</p>
+                    <p>Employee Id: {userInfo.employeeId}</p>
+                </div>
+            )}
         </div>
     );
 }
 
 export default UserProfile;
+
