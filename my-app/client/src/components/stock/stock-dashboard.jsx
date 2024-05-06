@@ -108,6 +108,7 @@ return (
         {/* <header className="App-header"> */}
           <p1>Coffee </p1>
           <p3>Keeper</p3>
+          <h5 className="navBanner">.</h5>
           {/* </div> */}
 
         <div className="stockDashboardContainer">

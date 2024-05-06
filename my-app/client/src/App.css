@@ -166,6 +166,14 @@ sans-serif;
     color: bisque;
   }
 
+  .navBanner {
+    /* text-decoration: underline; */
+    text-underline-offset: 5pt;
+    text-align: center;
+    display: block;
+    background-color: yellow;
+    color: yellow;
+  }
   /* p {
     color: aqua;
   } */
