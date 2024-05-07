@@ -1,30 +1,92 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import '../../App.css';
 
 function UserProfile() {
-    const [userInfo, setUserInfo] = useState(null);
-    const[userId, setUserId]= useState('');
+    const [userInfo, setUserInfo] = useState({
+        _id: '',
+        firstName: '',
+        lastName: '',
+        shopName: '',
+        employeeId: ''
+    });
+
+    const [editMode, setEditMode] = useState(false);
+    const [editUserInfo, setEditUserInfo] = useState({
+        firstName: '',
+        lastName: '',
+        shopName: '',
+        employeeId: ''
+    });
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('http://127.0.0.1:8000/user-auth/66299e010c378625c0c59ced',
-                    {
+                const storedUserInfo = localStorage.getItem('userInfo');
+                if (storedUserInfo) {
+                    setUserInfo(prevUserInfo => JSON.parse(storedUserInfo));
+                } else {
+                    const response = await fetch(`http://127.0.0.1:8000/user-auth/${userInfo._id}`, {
                         method: "GET",
                         headers: new Headers({ "Content-Type": "application/json" })
                     });
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    const data = await response.json();
+                    setUserInfo(data.user);
+                    localStorage.setItem('userInfo', JSON.stringify(data.user));
                 }
-                const data = await response.json();
-                setUserInfo(data.user);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
         };
 
         fetchData();
-    }, [userId]);
+    }, []); 
+
+    useEffect(() => {
+        setEditUserInfo(userInfo);
+    }, [userInfo]);
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setEditUserInfo(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
+    };
+
+    const handleEditClick = () => {
+        setEditMode(true);
+    };
+
+    const handleCancelEdit = () => {
+        setEditMode(false);
+        setEditUserInfo(userInfo);
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await fetch(`http://127.0.0.1:8000/user-auth/${userInfo._id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(editUserInfo)
+            });
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            setUserInfo(data.updatedUser);
+            localStorage.setItem('userInfo', JSON.stringify(data.updatedUser));
+            setEditMode(false);
+        } catch (error) {
+            console.error('Error updating user profile:', error);
+        }
+    };
 
     return (
         <div className="homeBackgroundImage" style={{
@@ -46,17 +108,42 @@ function UserProfile() {
                 </Link>
             </div>
             {userInfo && (
-                <div className="userInfo">
-                    <h2>User Profile</h2>
-                    <p>First Name: {userInfo.firstName}</p>
-                    <p>Last Name: {userInfo.lastName}</p>
-                    <p>Shop Name: {userInfo.shopName}</p>
-                    <p>Employee Id: {userInfo.employeeId}</p>
-                </div>
+                <form className="userInfo" onSubmit={handleSubmit}>
+                    <h2>User Profile Form</h2>
+                    {!editMode ? (
+                        <>
+                            <p>First Name: {userInfo.firstName}</p>
+                            <p>Last Name: {userInfo.lastName}</p>
+                            <p>Shop Name: {userInfo.shopName}</p>
+                            <p>Employee Id: {userInfo.employeeId}</p>
+                            <button type="button" onClick={handleEditClick}>Edit Profile</button>
+                        </>
+                    ) : (
+                        <>
+                            <label>
+                                First Name:
+                                <input type="text" value={editUserInfo.firstName} onChange={handleChange} name="firstName" />
+                            </label>
+                            <label>
+                                Last Name:
+                                <input type="text" value={editUserInfo.lastName} onChange={handleChange} name="lastName" />
+                            </label>
+                            <label>
+                                Shop Name:
+                                <input type="text" value={editUserInfo.shopName} onChange={handleChange} name="shopName" />
+                            </label>
+                            <label>
+                                Employee Id:
+                                <input type="text" value={editUserInfo.employeeId} onChange={handleChange} name="employeeId" />
+                            </label>
+                            <button type="submit">Save</button>
+                            <button type="button" onClick={handleCancelEdit}>Cancel</button>
+                        </>
+                    )}
+                </form>
             )}
         </div>
     );
 }
 
 export default UserProfile;
-
