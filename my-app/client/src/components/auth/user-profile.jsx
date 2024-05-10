@@ -2,48 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../../App.css';
 
-function UserProfile() {
-    const [userInfo, setUserInfo] = useState({
-        _id: '',
-        firstName: '',
-        lastName: '',
-        shopName: '',
-        employeeId: ''
-    });
+function UserProfile({setUserInfo, userInfo}) {
+    
 
     const [editMode, setEditMode] = useState(false);
-    const [editUserInfo, setEditUserInfo] = useState({
-        firstName: '',
-        lastName: '',
-        shopName: '',
-        employeeId: ''
-    });
+    const [editUserInfo, setEditUserInfo] = useState(userInfo);
+   
+    
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const storedUserInfo = localStorage.getItem('userInfo');
-                if (storedUserInfo) {
-                    setUserInfo(prevUserInfo => JSON.parse(storedUserInfo));
-                } else {
-                    const response = await fetch(`http://127.0.0.1:8000/user-auth/${userInfo._id}`, {
-                        method: "GET",
-                        headers: new Headers({ "Content-Type": "application/json" })
-                    });
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    const data = await response.json();
-                    setUserInfo(data.user);
-                    localStorage.setItem('userInfo', JSON.stringify(data.user));
-                }
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-        };
 
-        fetchData();
-    }, []); 
 
     useEffect(() => {
         setEditUserInfo(userInfo);
@@ -108,7 +75,7 @@ function UserProfile() {
                 </Link>
             </div>
             {userInfo && (
-                <form className="userInfo" onSubmit={handleSubmit}>
+                <div className="userInfo" >
                     <h2>User Profile Form</h2>
                     {!editMode ? (
                         <>
@@ -116,7 +83,8 @@ function UserProfile() {
                             <p>Last Name: {userInfo.lastName}</p>
                             <p>Shop Name: {userInfo.shopName}</p>
                             <p>Employee Id: {userInfo.employeeId}</p>
-                            <button type="button" onClick={handleEditClick}>Edit Profile</button>
+                            
+                                <button type="button" onClick={handleEditClick}>Edit Profile</button>
                         </>
                     ) : (
                         <>
@@ -136,11 +104,11 @@ function UserProfile() {
                                 Employee Id:
                                 <input type="text" value={editUserInfo.employeeId} onChange={handleChange} name="employeeId" />
                             </label>
-                            <button type="submit">Save</button>
+                            <button type="submit" onClick={handleSubmit}>Save</button>
                             <button type="button" onClick={handleCancelEdit}>Cancel</button>
                         </>
                     )}
-                </form>
+                </div>
             )}
         </div>
     );

@@ -6,7 +6,6 @@ const jwt = require('jsonwebtoken');
 const JWT_KEY = process.env.JWT_KEY;
 
 router.get('/:id', async (req, res) => {
-    console.log(req.params.id)
     try {
         const user = await User.findOne({ _id: req.params.id });
         if (!user) {
@@ -41,7 +40,7 @@ router.post('/login', async (req, res) => {
             return res.status(404).json({ error: "User not found" });
         }
         const token = jwt.sign({ userId: user._id }, JWT_KEY);
-        res.status(200).json({ message: 'Login successful', token });
+        res.status(200).json({ message: 'Login successful', token, user });
     } catch (error) {
         console.error("Error during login:", error);
         res.status(500).json({ error: "Internal Server Error" });
