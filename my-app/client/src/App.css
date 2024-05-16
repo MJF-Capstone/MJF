@@ -13,6 +13,7 @@ body {
 }
 
 
+
 @keyframes zoomOutBackground {
   from {
       background-size: 120%;
@@ -113,7 +114,7 @@ img {
   }
 
   p1 {
-    font-size: 100pt;
+    font-size: 50pt;
     font-weight: bolder;
     font-style: italic;
     /* color: rgb(39, 16, 5); */
@@ -183,6 +184,51 @@ sans-serif;
     font-size: 20pt;
   }
 
+  
+  h1 {
+    /* text-decoration: underline; */
+    text-underline-offset: 5pt;
+    text-align: center;
+    color: yellow;
+    font-size: 30pt;
+  }
+
+  h3 {
+    /* color: aqua; */
+    color: bisque;
+  }
+  
+  h4 {
+    text-align: center;
+    /* color: aqua; */
+    color: bisque;
+  }
+
+  .navBanner {
+    /* text-decoration: underline; */
+    text-underline-offset: 5pt;
+    text-align: center;
+    display: block;
+    background-color: yellow;
+    color: yellow;
+  }
+  /* p {
+    color: aqua;
+  } */
+
+  /* p2 {
+    font-size: 95pt;
+    /* color: rgb(65, 14, 14); */
+    /* color: rgb(189, 75, 19);
+    font-weight: bolder;
+    font-style: italic;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+sans-serif;
+    letter-spacing: 5pt;
+    z-index: 10;
+    position: relative;
+  } */
+
 
   .editbutton {
     color: red;
@@ -198,6 +244,9 @@ sans-serif;
     background: none;
   }
 
+
+
+ /* .Modal-header {
 
 
  /* .Modal-header {
@@ -341,7 +390,46 @@ cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
     /* margin-bottom: 0px; */
   }
 
+  
+  .input-form {
+    /* color: black; */
+    /* height: 40vh; */
+    /* width: 40vw; */
+    margin: auto;
+    /* text-align: center; */
+    /* border: 0; */
+    margin-top: 10rem;
+  }
+  
+  input {
+    display: block;
+    text-align: center;
+    /* margin: 2rem; */
+    margin: auto;
+    border: 10px solid bisque;
+    /* margin-bottom: 0px; */
+  }
 
+
+  .modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.4); /* Black background with opacity */
+    z-index: 999; /* Right behind the modal */
+  }
+  
+  .modal-container1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 999;
+  }
   .modal-container {
     position: fixed;
     top: 0;
@@ -394,7 +482,7 @@ cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
   
   
   .stockDashboardContainer {
-    height: 60vh;
+    height: 80vh;
     width: 80vw;
 
     /* align-items: center; */
@@ -404,7 +492,7 @@ cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
     background: rgba(0, 0, 0, 0);
     /* color: white;  */
     margin: auto;
-    margin-top: 5rem;
+    /* margin-top: 5rem; */
     /* border-radius: 15px; */
     position: relative;
     z-index: 1;
@@ -424,6 +512,9 @@ cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
   flex-wrap: wrap;
   justify-content: center;
   align-items: stretch;
+  padding: 0;
+  margin: 0;
+  border: 0;
 }
 /* .AddStock {
   text-align: center;
