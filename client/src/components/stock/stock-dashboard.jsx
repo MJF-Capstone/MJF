@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import '../../App.css'
-import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
+import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Tooltip, Legend, Ticks } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 
-ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
+
 
 function StockDashboard() {
     const chartRef = useRef(null);
@@ -20,6 +21,16 @@ function StockDashboard() {
         expirationDate: '',
         brandName: ''
     });
+    const messagesEndRef = useRef(null);
+    const scrollToBottom = () => {
+        if(messagesEndRef.current) {
+            messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
+    useEffect(() => {
+        scrollToBottom();
+    }, []); // Scroll to bottom whenever stocks change
 
 
     useEffect(() => {
@@ -107,6 +118,9 @@ function StockDashboard() {
         stock.itemName.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
+    const criticalThreshold = 10;
+
+    
     const chartData = {
         labels: stocks.map(stock => stock.itemName),
         datasets: [
@@ -114,20 +128,58 @@ function StockDashboard() {
                 label: 'Stock Levels',
                 data: stocks.map(stock => stock.stockCount),
                 fill: false,
-                backgroundColor: 'rgb(75, 192, 192)',
-                borderColor: 'rgba(75, 192, 192, 0.2)',
-            },
-        ],
-    };
-
+            backgroundColor: stocks.map(stock => {
+                // Check if the stock count is below the critical threshold
+                if (stock.stockCount < criticalThreshold) {
+                    // If below threshold, return red color
+                    return 'rgb(205, 31, 31, 0.849)'; // Red color
+                } else {
+                    // If not, return default color
+                    return 'rgb(255, 228, 196)'; // Default color
+                }
+                
+            }),
+            // borderColor: 'rgba(75, 192, 192, 0.2)',
+            borderColor: 'rgba(182, 68, 1)',
+        },
+    ],
+};
     const chartOptions = {
         scales: {
+            
             y: {
                 beginAtZero: true,
+                ticks: {
+                    color: 'rgba(255, 255, 255, 0.7)',
+                    font: {
+                        size: 20,
+                    },
+                },
+            },
+
+            x: {
+                beginAtZero: true,
+                ticks: {
+                    color: 'rgba(255, 255, 255, 0.7)',
+                    font: {
+                        size: 20,
+                    },
+                },
             },
         },
-    };
 
+    plugins: {
+        legend: {
+            labels: {
+                // Configuring the legend label color and font size
+                color: 'rgba(255, 255, 255, 0.7)', // White with opacity
+                font: {
+                    size: 20, // Font size
+                },
+            },
+        },
+    },
+}
 
     return (
         <div className="homeBackgroundImage" style={{
@@ -153,6 +205,7 @@ function StockDashboard() {
                 </div>
             </div>
             <div className="stockDashboardContainer">
+          
                 {stocks.length > 0 ? (
                     <ul>
                         {filteredStocks.map(stock => (
@@ -162,6 +215,7 @@ function StockDashboard() {
                                 <h3>Quantity: {stock.stockCount}</h3>
                             </li>
                         ))}
+                         <div ref={messagesEndRef}></div>
                     </ul>
                 ) : <p>{error || 'No stocks found.'}</p>}
                 {(isEditing || isAddingNew) && (
@@ -199,8 +253,8 @@ function StockDashboard() {
              <div>
                  <h2></h2>
                  <Bar ref={chartRef} data={chartData} options={chartOptions} />
-           </div>
             </div>
+         </div>
         </div>
     );
 }
