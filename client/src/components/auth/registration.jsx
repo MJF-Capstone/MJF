@@ -23,7 +23,7 @@ function Registration() {
           isAdmin,
         });
         console.log('registration successful', response.data);
-        navigate('/userdashboard');    
+        navigate('/');    
       } catch (err) {
         console.log(err);}}
 
