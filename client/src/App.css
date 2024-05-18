@@ -546,9 +546,8 @@ cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
   
   
   .stockDashboardContainer {
-    height: 60vh;
+    height: 69vh;
     width: 80vw;
-
     /* align-items: center; */
     /* justify-content: center; */
     /* flex-direction: row; */
@@ -579,6 +578,7 @@ cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
   padding: 0;
   margin: 0;
   border: 0;
+  margin-bottom: 15rem;
 }
 /* .AddStock {
   text-align: center;

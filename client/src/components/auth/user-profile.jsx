@@ -70,7 +70,7 @@ function UserProfile({setUserInfo, userInfo}) {
                 <Link to="/stockdashboard">
                     <button className="homeButton">NOTIFICATIONS</button>
                 </Link>
-                <Link to="/home">
+                <Link to="/">
                     <button className="homeButton">LOGOUT</button>
                 </Link>
             </div>
