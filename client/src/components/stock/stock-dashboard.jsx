@@ -19,7 +19,8 @@ function StockDashboard() {
         productNumber: '',
         stockCount: '',
         expirationDate: '',
-        brandName: ''
+        brandName: '',
+        imageUrl: ''
     });
     const messagesEndRef = useRef(null);
     const scrollToBottom = () => {
@@ -98,7 +99,8 @@ function StockDashboard() {
             productNumber: '',
             stockCount: '',
             expirationDate: '',
-            brandName: ''
+            brandName: '',
+            imageUrl: ''
         });
     };
 
@@ -110,7 +112,8 @@ function StockDashboard() {
             productNumber: '',
             stockCount: '',
             expirationDate: '',
-            brandName: ''
+            brandName: '',
+            imageUrl: ''
         });
     };
 
@@ -195,17 +198,19 @@ function StockDashboard() {
                     {/* <h1> */}
                         <a href='http://localhost:3000/userprofile' button type="button" className="homeButton2">Home</a>
                         <button type="button" className="addButton" onClick={openAddNew}>Add</button>
-                        <input
+                </div>
+                <div>
+                        
+                </div>
+            </div>
+            <div className="stockDashboardContainer">
+            <input
                         type="text"
                         placeholder="Search for Items..."
                         value={searchQuery}
                         onChange={e => setSearchQuery(e.target.value)}
                         className="searchField"
                     />
-                </div>
-            </div>
-            <div className="stockDashboardContainer">
-          
                 {stocks.length > 0 ? (
                     <ul>
                         {filteredStocks.map(stock => (
@@ -236,6 +241,9 @@ function StockDashboard() {
                                 </label>
                                 <label>Brand Name:
                                     <input type="text" className="inputField" name="brandName" value={currentStock.brandName || ''} onChange={handleChange} required />
+                                </label>
+                                <label>Image:
+                                    <input type="text" className="inputField" name="image" value={currentStock.imageUrl || ''} onChange={handleChange} required />
                                 </label>
                                 <button className="editbutton" onClick={handleSave}>Save</button>
                                 <button className="editbutton" onClick={handleClose}>Cancel</button>
