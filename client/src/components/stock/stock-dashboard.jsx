@@ -196,8 +196,8 @@ function StockDashboard() {
                 </div>
                 <div className="nameNav2">
                     {/* <h1> */}
-                        <a href='http://localhost:3000/userprofile' button type="button" className="homeButton2">Home</a>
-                        <button type="button" className="addButton" onClick={openAddNew}>Add</button>
+                        <a href='http://localhost:3000/userprofile' button type="button" className="homeButton">Home</a>
+                        <button type="button" className="homeButton" onClick={openAddNew}>Add</button>
                 </div>
                 <div>
                         
@@ -243,7 +243,7 @@ function StockDashboard() {
                                     <input type="text" className="inputField" name="brandName" value={currentStock.brandName || ''} onChange={handleChange} required />
                                 </label>
                                 <label>Image:
-                                    <input type="text" className="inputField" name="image" value={currentStock.imageUrl || ''} onChange={handleChange} required />
+                                    <input type="text" className="inputField" name="imageUrl" value={currentStock.imageUrl || ''} onChange={handleChange} required />
                                 </label>
                                 <button className="editbutton" onClick={handleSave}>Save</button>
                                 <button className="editbutton" onClick={handleClose}>Cancel</button>

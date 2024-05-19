@@ -6,35 +6,7 @@ import '../../App.css';
 // import { useNavigate } from 'react-router-dom'
 
 function Home() {
-    // const [data, setData] = useState(null);
-    // const [login, setLogin] = useState('');
-    // const navigate = useNavigate();
-
-    // useEffect(() => {
-    //     const token = localStorage.getItem('token');
-    //     if (token) {
-    //         axios.post('http://localhost:8000/user-auth/login', {
-    //             headers: {
-    //                 Authorization: `Bearer ${token}`
-    //             }
-    //         })
-    //        .then(response => {
-    //             setLogin('You have successfully signed in!');
-
-    //        })
-    //        .catch(error => {
-    //             console.error('error verifying');
-    //         });
-    //     }
-    //     axios.get('http://localhost:8000/stock/home')
-    //     .then(response => {
-    //         setData(response.data);
-    //     })
-    //         .catch(error => {
-    //             console.error('error fetching data from /home:', error);
-    //         })
-    // }, []);
-
+   
         return (
             <div className="homeBackgroundImage" style={{
                 backgroundImage:

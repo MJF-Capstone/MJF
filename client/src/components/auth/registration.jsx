@@ -43,7 +43,7 @@ function Registration() {
             <input className='registerButton'type="password" value={employeeId} onChange={e => setEmployeeId(e.target.value)} placeholder="Employee ID" required /><br/>
             <div>
               {/* <label> */}
-              <p4>Admin?</p4>
+              <h5>Admin?</h5>
                 <input type="checkbox" checked={isAdmin} onChange={e => setIsAdmin(e.target.checked)}/><br/><br/>
               {/* </label> */}
             </div>

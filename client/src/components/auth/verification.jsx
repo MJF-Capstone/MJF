@@ -59,7 +59,8 @@ function Login({setUserInfo, userInfo}) {
       {/* <header className="App-header"> */}
       <p1>Coffee </p1>
       <p3>Keeper</p3>
-      <div className="input-form">
+    <div className="registration">
+      {/* <div className="input-form"> */}
         <input
           type="text"
           value={shopName}
@@ -80,13 +81,15 @@ function Login({setUserInfo, userInfo}) {
         {invalid && <span className="invalid">Invalid username or password</span>}
         {/* <br /> */}
         {/* Button to trigger login */}
-      </div>
+        {/* </div> */}
+      {/* </div> */}
+
       <h1>
-        <button className="submitButton" onClick={handleLogin}>
+        <button className="registrationButton2" onClick={handleLogin}>
           SUBMIT
         </button></h1>
       <h4>
-        Don't have an account? </h4><Link to="/register"><h4>Create Account</h4></Link>
+        Don't have an account? </h4><Link to="/register"><h5>Create Account</h5></Link>
     </div>
     // </div>
   )

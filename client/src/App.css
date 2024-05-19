@@ -84,10 +84,11 @@ body {
 .nameNav2 {
   display: flex;
   align-content: space-between;
-  margin: auto;
+  /* margin: auto; */
+  margin-bottom: 3rem;
   padding: 0;
   border: 0;
-  gap: 20px;
+  gap: 30px;
 }
 
 
@@ -254,6 +255,17 @@ cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
       position: relative;
     }
 
+    .registrationButton2 {
+      color: bisque;
+      font-size: 20pt;
+      padding: .5rem;
+      margin: 1.5rem;
+      border: 0;
+      background-color: rgb(17, 116, 178);
+      border-radius: 5%;
+      position: relative;
+    }
+
 
 .userProfile{
   display: flex;
@@ -296,7 +308,6 @@ cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
     text-align: center;
     margin: auto;
   }
-
   
   .input-form {
      margin: auto;
@@ -310,15 +321,12 @@ cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
     margin: auto;
     border: 5px solid bisque;
   }
-
   
   .input-form {
     margin: auto;
     margin-top: 10rem;
-
   }
   
-
   .modal-container {
     position: fixed;
     top: 0;
