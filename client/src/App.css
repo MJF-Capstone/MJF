@@ -345,8 +345,10 @@ cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
       /* margin: 2rem; */
       /* margin-top: 5rem; */
       /* display: inline-block; */
-      padding: 0;
+      padding: .5rem;
       border: 0;
+      background-color: rgb(17, 116, 178);
+      border-radius: 5%;
       position: relative;
     }
 
@@ -534,7 +536,9 @@ cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
     width: auto;
     height: auto;
     max-width: 500px;
-    background-color: rgba(23, 207, 239, 0.729);
+    /* background-color: rgba(23, 207, 239, 0.729); */
+    background-color: rgb(23, 207, 239);
+
     padding: 30px;
     border: 5px solid #ccc;
     border-radius: 10px;
@@ -542,7 +546,7 @@ cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
     z-index: 1000;
     overflow: hidden;
   }
-  
+
   
   
   .stockDashboardContainer {

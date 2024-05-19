@@ -8,9 +8,6 @@ function UserProfile({setUserInfo, userInfo}) {
     const [editMode, setEditMode] = useState(false);
     const [editUserInfo, setEditUserInfo] = useState(userInfo);
    
-    
-
-
 
     useEffect(() => {
         setEditUserInfo(userInfo);
@@ -60,8 +57,8 @@ function UserProfile({setUserInfo, userInfo}) {
             backgroundImage: "url('https://images.unsplash.com/photo-1493925410384-84f842e616fb?q=80&w=2865&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
         }}>
             <header className="App-header">
-                <p>Coffee Keeper</p>
-                <h1>Welcome!</h1>
+                <p1>Coffee</p1>
+                    <p3>Keeper</p3>
             </header>
             <div className='userProfile'>
                 <Link to="/stockdashboard">

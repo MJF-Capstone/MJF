@@ -44,7 +44,7 @@ function Registration() {
             <div>
               {/* <label> */}
               <p4>Admin?</p4>
-                <input type="checkbox" checked={isAdmin} onChange={e => setIsAdmin(e.target.checked)}/>
+                <input type="checkbox" checked={isAdmin} onChange={e => setIsAdmin(e.target.checked)}/><br/><br/>
               {/* </label> */}
             </div>
             <button className='registrationButton' type="submit">Submit</button>
