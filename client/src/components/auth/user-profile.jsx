@@ -2,12 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../../App.css';
 
-function UserProfile({setUserInfo, userInfo}) {
-    
+function UserProfile({ setUserInfo, userInfo }) {
+
 
     const [editMode, setEditMode] = useState(false);
     const [editUserInfo, setEditUserInfo] = useState(userInfo);
-   
+
+
+
+
 
     useEffect(() => {
         setEditUserInfo(userInfo);
@@ -64,45 +67,56 @@ function UserProfile({setUserInfo, userInfo}) {
                 <Link to="/stockdashboard">
                     <button className="homeButton">INVENTORY</button>
                 </Link>
-                <Link to="/stockdashboard">
-                    <button className="homeButton">NOTIFICATIONS</button>
-                </Link>
                 <Link to="/">
                     <button className="homeButton">LOGOUT</button>
                 </Link>
             </div>
             {userInfo && (
                 <div className="userInfo" >
-                    <h2>User Profile Form</h2>
+                    <h2>User Profile</h2>
                     {!editMode ? (
                         <>
-                            <p>First Name: {userInfo.firstName}</p>
-                            <p>Last Name: {userInfo.lastName}</p>
-                            <p>Shop Name: {userInfo.shopName}</p>
-                            <p>Employee Id: {userInfo.employeeId}</p>
-                            
-                                <button type="button" onClick={handleEditClick}>Edit Profile</button>
+
+                            First Name:
+                            <div className='userLine'>
+                                <p>{userInfo.firstName}</p>
+                            </div>
+                            Last Name:
+                            <div className='userLine'>
+                                <p>{userInfo.lastName}</p>
+                            </div>
+                            Shop Name:
+                            <div className='userLine'>
+                                <p>{userInfo.shopName}</p>
+                            </div>
+                            Employee Id:
+                            <div className='userLine'>
+                                <p>{userInfo.employeeId}</p>
+                            </div>
+                            <button type="button" onClick={handleEditClick}>Edit Profile</button>
                         </>
                     ) : (
                         <>
-                            <label>
-                                First Name:
-                                <input type="text" value={editUserInfo.firstName} onChange={handleChange} name="firstName" />
-                            </label>
-                            <label>
-                                Last Name:
-                                <input type="text" value={editUserInfo.lastName} onChange={handleChange} name="lastName" />
-                            </label>
-                            <label>
-                                Shop Name:
-                                <input type="text" value={editUserInfo.shopName} onChange={handleChange} name="shopName" />
-                            </label>
-                            <label>
-                                Employee Id:
-                                <input type="text" value={editUserInfo.employeeId} onChange={handleChange} name="employeeId" />
-                            </label>
-                            <button type="submit" onClick={handleSubmit}>Save</button>
-                            <button type="button" onClick={handleCancelEdit}>Cancel</button>
+                            <div className='form-div'>
+                                <label>
+                                    First Name:
+                                    <input type="text" value={editUserInfo.firstName} onChange={handleChange} name="firstName" />
+                                </label>
+                                <label>
+                                    Last Name:
+                                    <input type="text" value={editUserInfo.lastName} onChange={handleChange} name="lastName" />
+                                </label>
+                                <label>
+                                    Shop Name:
+                                    <input type="text" value={editUserInfo.shopName} onChange={handleChange} name="shopName" />
+                                </label>
+                                <label>
+                                    Employee Id:
+                                    <input type="text" value={editUserInfo.employeeId} onChange={handleChange} name="employeeId" />
+                                </label>
+                                <button type="submit" onClick={handleSubmit}>Save</button>
+                                <button type="button" onClick={handleCancelEdit}>Cancel</button>
+                            </div>
                         </>
                     )}
                 </div>
