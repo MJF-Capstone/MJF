@@ -26,18 +26,6 @@ router.get('/stockdashboard', async (req, res) => {
 });
 
 
-// router.get('/users', async (req, res) => {
-//   try {
-//     const users = await User.find({});
-//     if (!users.length) {
-//       return res.status(404).json({ message: 'No users found.' })
-//   }
-//   res.status(200).json(stocks);
-//   } catch (err) {
-//   console.log(err);
-//   res.status(500).json({ message: `${err}` })
-//   }
-// });
 
 router.get('/home', async (req, res) => {
   res.json({ message: "Welcome to the Home page" })
