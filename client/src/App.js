@@ -10,6 +10,7 @@ import UserDashboard from './components/stock/user-dashboard';
 import Login from './components/auth/verification';
 import Registration from './components/auth/registration';
 import UserProfile from './components/auth/user-profile'; 
+import CriticalStock from './components/stock/critical-stock'; 
 
 function App() {
   const [userInfo, setUserInfo] = useState("")
@@ -37,6 +38,7 @@ function App() {
               <Route path="/userprofile" element={<UserProfile userInfo={userInfo} setUserInfo={setUserInfo} />} />
               <Route path="/userdashboard" element={<UserDashboard />} />
               <Route path="/stockdashboard" element={<StockDashboard />} />
+              <Route path="/criticalstock" element={<CriticalStock />} />
               <Route path="/filter" element={<Filter />} />
             </Routes>
           </div>
