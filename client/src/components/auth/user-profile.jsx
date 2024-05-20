@@ -62,35 +62,33 @@ function UserProfile({ setUserInfo, userInfo }) {
                 <p1>Coffee</p1>
                     <p3>Keeper</p3>
             <div className='userProfile'>
+            <div className='homeButton2'>Welcome, {userInfo.firstName}!</div>
+
                 <Link to="/stockdashboard">
-                    <button className="homeButton">INVENTORY</button>
+                    <button className="homeButton2">INVENTORY</button>
                 </Link>
                 <Link to="/">
-                    <button className="homeButton">LOGOUT</button>
+                    <button className="homeButton2">LOGOUT</button>
                 </Link>
             </div>
             {userInfo && (
                 <div className="registration1" >
                     <h2>User Profile</h2>
+                    <div className="profileContainer">
+                        <div className="profileImage">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8fDA%3D"/>
+                            </div>
+                            <div className="profileInfo">
                     {!editMode ? (
                         <>
-
-                            First Name:
-                            <div className='userLine'>
+                            <p5>First Name:</p5>
                                 <p>{userInfo.firstName}</p>
-                            </div>
-                            Last Name:
-                            <div className='userLine'>
+                            <p5>Last Name:</p5>
                                 <p>{userInfo.lastName}</p>
-                            </div>
-                            Shop Name:
-                            <div className='userLine'>
+                            <p5>Shop Name:</p5>
                                 <p>{userInfo.shopName}</p>
-                            </div>
-                            Employee Id:
-                            <div className='userLine'>
+                            <p5>Employee Id:</p5>
                                 <p>{userInfo.employeeId}</p>
-                            </div>
                             <button type="button" className="registrationButton3" onClick={handleEditClick}>Edit Profile</button>
                         </>
                     ) : (
@@ -118,6 +116,8 @@ function UserProfile({ setUserInfo, userInfo }) {
                             </div>
                         </>
                     )}
+                </div>
+                </div>
                 </div>
             )}
         </div>

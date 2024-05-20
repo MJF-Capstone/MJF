@@ -134,17 +134,49 @@ img {
     font-size: 60pt;
     font-weight: bolder;
     font-style: italic;
-    /* color: rgb(39, 16, 5); */
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
     sans-serif;
     letter-spacing: 5pt;
     /* color: rgb(168, 52, 26); */
     color: rgb(201, 106, 12);
-    /* z-index: 10; */
-    
+  }
+
+
+  p5 {
+    font-size: 13pt;
+    font-weight: bolder;
+    font-style: italic;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+    sans-serif;
+    letter-spacing: 3pt;
+    color: rgb(201, 106, 12);
   }
   
   
+  .profileContainer {
+    display: flex;
+    align-items: flex-start;
+}
+
+.profileImage {
+    margin-right: 20px;
+}
+
+.profileImage img {
+    width: 150px; 
+    height: auto;
+    border-radius: 90%; 
+}
+
+.profileInfo {
+    flex: 1;
+}
+
+
+
+
+
+
   h1 {
     /* text-decoration: underline; */
     text-underline-offset: 5pt;
@@ -243,6 +275,20 @@ cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
               animation: tracking-in-expand-fwd 5s cubic-bezier(0.215,
 0.610, 0.355, 1.000) both;
     }
+
+    .homeButton2 {
+      color: bisque;
+      font-size: 30pt;
+      margin: 2rem;
+      margin-top: 1rem;
+      padding: 0;
+      border: 0;
+      position: relative;
+        -webkit-animation: tracking-in-expand-fwd 2.8s
+  cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+                animation: tracking-in-expand-fwd 5s cubic-bezier(0.215,
+  0.610, 0.355, 1.000) both;
+      }
 
 
     .registrationButton {
@@ -439,8 +485,8 @@ cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
     left: 50%;
     text-align: center;
     transform: translate(-50%, -50%);
-    width: auto;
-    height: auto;
+    width: 80vw;
+    height: 47vh;
     margin-top: 5rem;
     max-width: 500px;
     background-color: rgb(23, 207, 239);
