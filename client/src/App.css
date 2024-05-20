@@ -255,6 +255,17 @@ cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
       position: relative;
     }
 
+    .registrationButton1 {
+      color: bisque;
+      font-size: 20pt;
+      padding: .5rem;
+      margin-top: 1rem;
+      border: 0;
+      background-color: rgb(17, 116, 178);
+      border-radius: 5%;
+      position: relative;
+    }
+
     .registrationButton2 {
       color: bisque;
       font-size: 20pt;
@@ -264,6 +275,31 @@ cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
       background-color: rgb(17, 116, 178);
       border-radius: 5%;
       position: relative;
+    }
+
+    .registrationButton3 {
+      color: bisque;
+      font-size: 20pt;
+      padding: .2rem;
+      margin: .5rem;
+      margin-bottom: 1.5rem;
+      border: 0;
+      background-color: rgb(17, 116, 178);
+      border-radius: 5%;
+      position: relative;
+      gap: 1rem;
+    }
+
+    
+    .registrationButton4 {
+      color: bisque;
+      font-size: 20pt;
+      padding: .2rem;
+      border: 0;
+      background-color: rgb(17, 116, 178);
+      border-radius: 5%;
+      position: relative;
+      gap: 1rem;
     }
 
 
@@ -384,6 +420,28 @@ cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
     transform: translate(-50%, -50%);
     width: auto;
     height: auto;
+    max-width: 500px;
+    background-color: rgb(23, 207, 239);
+    padding: 30px;
+    border: 5px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 1000;
+    overflow: hidden;
+  }
+
+    
+  .registration1{
+    text-align: center;
+    background-color: black;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    margin-top: 5rem;
     max-width: 500px;
     background-color: rgb(23, 207, 239);
     padding: 30px;
@@ -520,4 +578,12 @@ ul{
  h2{
   font-size: 35px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: antiquewhite;
+ }
+
+ h6{
+  font-size: 35px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: antiquewhite;
+  margin-bottom: 1rem;
  }

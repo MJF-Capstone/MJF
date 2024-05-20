@@ -245,13 +245,13 @@ function StockDashboard() {
                                 <label>Image:
                                     <input type="text" className="inputField" name="imageUrl" value={currentStock.imageUrl || ''} onChange={handleChange} required />
                                 </label>
-                                <button className="editbutton" onClick={handleSave}>Save</button>
-                                <button className="editbutton" onClick={handleClose}>Cancel</button>
+                                <button className="registrationButton3" onClick={handleSave}>Save</button>
+                                <button className="registrationButton3" onClick={handleClose}>Cancel</button>
                                 {isEditing && (
                                     <div className="deleteModal">
                                         <p>Are you sure you want to delete this item?</p>
-                                        <button className="editbutton" onClick={handleDelete}>Yes</button>
-                                        <button className="editbutton" onClick={handleClose}>No</button>
+                                        <button className="registrationButton3" onClick={handleDelete}>Yes</button>
+                                        <button className="registrationButton3" onClick={handleClose}>No</button>
                                     </div>
                                 )}
                             </form>

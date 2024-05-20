@@ -59,10 +59,8 @@ function UserProfile({ setUserInfo, userInfo }) {
         <div className="homeBackgroundImage" style={{
             backgroundImage: "url('https://images.unsplash.com/photo-1493925410384-84f842e616fb?q=80&w=2865&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
         }}>
-            <header className="App-header">
                 <p1>Coffee</p1>
                     <p3>Keeper</p3>
-            </header>
             <div className='userProfile'>
                 <Link to="/stockdashboard">
                     <button className="homeButton">INVENTORY</button>
@@ -72,7 +70,7 @@ function UserProfile({ setUserInfo, userInfo }) {
                 </Link>
             </div>
             {userInfo && (
-                <div className="userInfo" >
+                <div className="registration1" >
                     <h2>User Profile</h2>
                     {!editMode ? (
                         <>
@@ -93,10 +91,11 @@ function UserProfile({ setUserInfo, userInfo }) {
                             <div className='userLine'>
                                 <p>{userInfo.employeeId}</p>
                             </div>
-                            <button type="button" onClick={handleEditClick}>Edit Profile</button>
+                            <button type="button" className="registrationButton3" onClick={handleEditClick}>Edit Profile</button>
                         </>
                     ) : (
                         <>
+                        
                             <div className='form-div'>
                                 <label>
                                     First Name:
@@ -114,8 +113,8 @@ function UserProfile({ setUserInfo, userInfo }) {
                                     Employee Id:
                                     <input type="text" value={editUserInfo.employeeId} onChange={handleChange} name="employeeId" />
                                 </label>
-                                <button type="submit" onClick={handleSubmit}>Save</button>
-                                <button type="button" onClick={handleCancelEdit}>Cancel</button>
+                                <button type="submit" className="registrationButton3" onClick={handleSubmit}>Save</button>
+                                <button type="button" className="registrationButton3" onClick={handleCancelEdit}>Cancel</button>
                             </div>
                         </>
                     )}
