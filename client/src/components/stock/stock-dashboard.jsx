@@ -188,21 +188,13 @@ function StockDashboard() {
         <div className="homeBackgroundImage" style={{
             backgroundImage: "url('https://images.unsplash.com/photo-1493925410384-84f842e616fb?q=80&w=2865&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
         }}>
-            <div className="flex-container">
-                <div className="nameNav">
                     <p1>Coffee</p1>
                     <p3>Keeper</p3>
-                    {/* <h5 className="navBanner">.</h5> */}
-                </div>
-                <div className="nameNav2">
-                    {/* <h1> */}
-                        <a href='http://localhost:3000/userprofile' button type="button" className="homeButton">Home</a>
-                        <button type="button" className="homeButton" onClick={openAddNew}>Add</button>
-                </div>
-                <div>
-                        
-                </div>
-            </div>
+                    <div className='userProfile'>
+                        <a href='http://localhost:3000/userprofile' button type="button" className="homeButton2">Home</a>
+                        <button type="button" className="homeButton2" onClick={openAddNew}>Add
+                        </button>    
+                    </div>                 
             <div className="stockDashboardContainer">
             <input
                         type="text"

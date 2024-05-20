@@ -60,15 +60,15 @@ function UserProfile({ setUserInfo, userInfo }) {
             backgroundImage: "url('https://images.unsplash.com/photo-1493925410384-84f842e616fb?q=80&w=2865&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
         }}>
                 <p1>Coffee</p1>
-                    <p3>Keeper</p3>
+                <p3>Keeper</p3>
             <div className='userProfile'>
             <div className='homeButton2'>Welcome, {userInfo.firstName}!</div>
 
                 <Link to="/stockdashboard">
-                    <button className="homeButton2">INVENTORY</button>
+                    <button className="homeButton2">Inventory</button>
                 </Link>
                 <Link to="/">
-                    <button className="homeButton2">LOGOUT</button>
+                    <button className="homeButton2">Logout</button>
                 </Link>
             </div>
             {userInfo && (
