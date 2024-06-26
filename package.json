@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "chart.js": "^4.4.3",
-    "react-chartjs-2": "^5.2.0"
+    "react-chartjs-2": "^5.2.0",
+    "homepage": "https://marthameanslady.github.io/my-app"
   }
 }

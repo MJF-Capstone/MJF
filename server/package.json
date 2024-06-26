@@ -5,10 +5,14 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
+    "start": "react-scripts start",
     "setup": "npm install && cd client && npm install",
-    "dev": "nodemon"
+    "dev": "nodemon server.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "build": "react-scripts build"
   },
+  "homepage": "https://marthameanslady.github.io/my-app",
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -19,6 +23,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "gh-pages": "^6.1.1",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.3.2",
     "react-chartjs-2": "^5.2.0"
